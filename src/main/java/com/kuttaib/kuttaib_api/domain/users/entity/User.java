@@ -23,7 +23,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class User extends BaseEntity {
 
-    @Column(nullable = false, unique = true, length = 50)
+    @Column(length = 50)
     private String username;
 
     @Column(unique = true)

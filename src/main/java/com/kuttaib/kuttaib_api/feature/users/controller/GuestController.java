@@ -1,26 +1,20 @@
 package com.kuttaib.kuttaib_api.feature.users.controller;
 
-import com.kuttaib.kuttaib_api.domain.users.entity.User;
-import com.kuttaib.kuttaib_api.domain.users.entity.UserRole;
-import com.kuttaib.kuttaib_api.domain.users.repository.UserRepository;
+import com.kuttaib.kuttaib_api.feature.users.response.CreateGuestUserResponse;
+import com.kuttaib.kuttaib_api.feature.users.services.UserServices;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/guests")
+@RequestMapping("/api/onboarding/guests")
 @RequiredArgsConstructor
 public class GuestController {
 
-    private final UserRepository userRepository;
+    private final UserServices userServices;
 
     @PostMapping
-    public User createGuest() {
-
-        User user = User.builder()
-                .role(UserRole.GUEST)
-                .build();
-
-        return userRepository.save(user);
+    public CreateGuestUserResponse createGuest() {
+        return userServices.createGuest();
     }
 }
