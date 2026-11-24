@@ -43,6 +43,9 @@ public class User extends BaseEntity {
     @Builder.Default
     private Integer dailyVerseTarget = 0;
 
+    @Enumerated(EnumType.STRING)
+    private UserDailyTargetType userDailyTargetType;
+
     @Column
     private LocalDateTime deletedAt;
 }

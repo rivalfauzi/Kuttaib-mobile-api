@@ -10,9 +10,9 @@ import lombok.Builder;
 @Builder
 public class CreateOnboardingTarget {
     private UUID id;
-    private String target;
-    private Integer totalTarget;
-    private String targetType;
-    private Integer targetDailyTime;
-    private Integer estimation;
+    private String targetName;
+    private String targetDescription;
+    private String dailyTargetString;
+    private String targetDailyTime;
+    private String estimation;
 }
