@@ -13,7 +13,7 @@ import lombok.Setter;
 @Setter 
 public class CreateOnboardingRequest {
 
-    @NotNull
+    @NotNull(message = "userId wajib diisi")
     private String userId;
 
     @NotNull(message = "Target ayah per hari wajib diisi")
@@ -21,13 +21,13 @@ public class CreateOnboardingRequest {
     @Max (value = 50, message = "Maksimal 50")
     private Double dailyTarget;
 
-    @NotNull 
+    @NotNull(message = "dailyTargetType wajib diisi")
     private UserDailyTargetType dailyTargetType;
 
-    @NotNull 
+    @NotNull(message = "targetNumber wajib diisi")
     private Integer targetNumber;
 
-    @NotNull 
+   @NotNull(message = "targetType wajib diisi")
     private TargetType targetType;
 
     private Integer targetTime;
